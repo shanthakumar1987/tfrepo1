@@ -1,14 +1,25 @@
 provider "aws" {
+
+   Secret_Key: "var.secret_key"
+   Access_Key: "var.access_key"
  
   region =  "us-east-1"
   
 }
 
+variable "access_key" {
+ type =string
 
-module "dasam_first_module" {
-    source = "./demo_mod1"
-    bucket_name = "shantha-kumare"
-    var_cidr = "192.162.0.0/24"
-    var_name = "shantha-demo-vpc"
+}
+variable "secret_key" {
+ type = string
+}
+
+esource "aws_vpc" "shanth-vpc" {
+    cidr_block = "192.179.0.0/24"
+    tags = {
+      "Name"= "shanth123"
+    }
   
 }
+
