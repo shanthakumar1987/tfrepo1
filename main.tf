@@ -1,3 +1,4 @@
+
 provider "aws" {
 
    Secret_Key: "var.secret_key"
@@ -6,6 +7,25 @@ provider "aws" {
   region =  "us-east-1"
   
 }
+
+terraform {
+
+ backend "s3" {
+
+   region = "us-east-1"
+
+   bucket = "tfstateb1lab"
+
+   dynamodb_table = "tflcktable"   
+
+   key = "tfpl1.tfstate"
+
+   
+
+ }
+
+}
+
 
 variable "access_key" {
  type =string
