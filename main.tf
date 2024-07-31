@@ -14,8 +14,8 @@
       "s3": {
         "region": "us-east-1",
         "bucket": "test-nts15",
-        "dynamodb_table": "tflcktable",
-        "key": "terraform.tfstate"
+        "dynamodb_table": "NTS-15-test",
+        "key": "terraform2.tfstate"
       }
     }
   },
@@ -61,4 +61,12 @@
             }
           }
         ],
-        "connection
+        "connection": {
+          "user": "ubuntu",
+          "private_key": "${file(local_file.tf-key.filename)}",
+          "host": "${aws_instance.web-server.public_ip}"
+        }
+      }
+    }
+  }
+}
