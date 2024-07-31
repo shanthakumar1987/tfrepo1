@@ -14,11 +14,11 @@ terraform {
 
    region = "us-east-1"
 
-   bucket = "tfstateb1lab"
+   bucket = "test-nts15"
 
    dynamodb_table = "tflcktable"   
 
-   key = "tfpl1.tfstate"
+   key = "terraform.tfstate"
 
    
 
